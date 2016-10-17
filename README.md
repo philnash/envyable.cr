@@ -13,7 +13,7 @@ Add this to your application's `shard.yml`:
 ```yaml
 development_dependencies:
   envyable:
-    github: philnash/envyable
+    github: philnash/envyable.cr
 ```
 
 ## Usage
@@ -54,7 +54,7 @@ It is not recommended that you check the YAML file in to version control. I like
 
 ## Contributing
 
-1. Fork it ( https://github.com/philnash/envyable/fork )
+1. Fork it ( https://github.com/philnash/envyable.cr/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
