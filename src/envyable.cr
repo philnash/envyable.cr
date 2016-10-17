@@ -1,5 +1,23 @@
 require "./envyable/*"
 
+# Public: A simple yaml to ENV loader.
 module Envyable
-  # TODO Put your code here
+  # Public: load the yaml file from path and set the variables in the given
+  # environment to the ENV.
+  #
+  # path        - a Pathname or String that describes where the yaml file
+  #               resides.
+  # environment - a String describing the environment from which to load the
+  #               variables (default: development).
+  #
+  # Examples
+  #
+  #   Envyable.load("config/env.yml")
+  #
+  #   Envyable.load("config/application.yml", "production")
+  #
+  # Returns nothing.
+  def self.load(path : String, environment = "development")
+    Loader.new(path).load(environment)
+  end
 end
