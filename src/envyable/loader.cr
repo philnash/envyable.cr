@@ -4,8 +4,6 @@ require "file"
 module Envyable
   # Internal: Loads yaml files into ENV (or a supplied hash).
   class Loader
-    @yml : YAML::Any = YAML::Any.new(nil)
-
     # Internal: Returns the String or Pathname path of the loader
     getter :path
 
@@ -32,11 +30,10 @@ module Envyable
     #
     # Returns nothing.
     def load(environment = "development")
-      @yml = load_yml
-      if @yml != nil
-        @yml.each { |key, value| set_value(key, value) }
-        if @yml[environment]?
-          @yml[environment].each { |key, value| set_value(key, value) }
+      load_yml.as_h?.try do |hash|
+        hash.each { |key, value| set_value(key, value) }
+        hash.fetch(environment, YAML::Any.new(nil)).as_h?.try do |env_hash|
+          env_hash.each { |key, value| set_value(key, value) }
         end
       end
     end
