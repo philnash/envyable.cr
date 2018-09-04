@@ -1,7 +1,12 @@
 name: envyable
-version: 0.1.0
+version: 1.0.1
 
 authors:
   - Phil Nash <philnash@gmail.com>
 
+description: |
+   The simplest YAML to ENV config loader in Crystal. Use YAML files to manage your local environment variables.
+
 license: MIT
+
+crystal: 0.26.1
