@@ -2,7 +2,7 @@
 
 The simplest yaml to `ENV` config loader.
 
-[![Build Status](https://travis-ci.org/philnash/envyable.cr.svg?branch=master)](https://travis-ci.org/philnash/envyable.cr)
+[![Build status](https://github.com/philnash/envyable.cr/actions/workflows/tests.yml/badge.svg)](https://github.com/philnash/envyable.cr/actions/workflows/tests.yml)
 
 Envyable takes a config YAML file and loads the entries into your `ENV` hash. Keep your development environment clean of application specific configuration.
 
